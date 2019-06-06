@@ -5,6 +5,12 @@ body {
   background-color: lightgoldenrodyellow;
 }
 
+/* my styles */
+.sidebar{
+  width: 20%;
+  float: left;
+}
+
 .phone-images {
   background-color: white;
   width: 450px;
