@@ -18,12 +18,12 @@ class PhonesCatalog extends React.Component {
         const response = await window.fetch(API_URL + '/phones.json');
         let phones = await response.json();
         this.setState({ phones });
-        console.log(this.state);
+        console.log(this.state.phones[0].imageUrl);
     }
     render() {
         const { isShown } = this.props;
         const phonesArr = this.state.phones.map(phone =>
-            <Phone id={phone.id} key={phone.age} name={phone.name} imageUrl={phone.imageUrl} />
+            <Phone id={phone.id} key={phone.age} name={phone.name} imageUrl={phone.imageUrl} snippet={phone.snippet} />
 
         )
         if (isShown) {
