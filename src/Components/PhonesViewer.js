@@ -2,19 +2,20 @@ import React from 'react';
 
 
 class PhonesViewer extends React.Component {
-    // constructor() {
-    //   super();
+    constructor() {
+        super();
 
-    //   this.state = {
-    //   };
-    // }
+        this.state = {
+        };
+    }
     render() {
-        const { isShown } = this.props;
+        const { isShown, phone } = this.props;
         if (isShown) {
             return (
                 <div>
 
                     PhonesViewer
+                    {console.log(phone)}
                 </div>
             );
         } else return null

@@ -1,20 +1,21 @@
 import React from 'react';
 
 function Phone(props) {
-    // const {}=props
+    const { id, name, imageUrl, snippet, onClickDetails } = props
     return (
         <li className="thumbnail"
             data-element="phone-element"
-            data-phone-id={props.id}
+            data-phone-id={id}
         >
             <a
                 href="#!/phones/motorola-xoom-with-wi-fi"
                 className="thumb"
                 data-element="details-link"
+                onClick={() => onClickDetails(id)}
             >
                 <img
-                    alt={props.name}
-                    src={require(`../${props.imageUrl}`)}
+                    alt={name}
+                    src={require(`../${imageUrl}`)}
                     style={{ maxWidth: "100%" }}
                 />
             </a>
@@ -28,8 +29,9 @@ function Phone(props) {
             <a
                 href="#!/phones/motorola-xoom-with-wi-fi"
                 data-element="details-link"
-            >{props.name}</a>
-            <p>{props.snippet}</p>
+                onClick={() => onClickDetails(id)}
+            >{name}</a>
+            <p>{snippet}</p>
         </li>
     )
 }

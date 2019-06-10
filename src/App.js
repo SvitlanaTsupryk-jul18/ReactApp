@@ -9,14 +9,29 @@ class App extends React.Component {
 
     this.state = {
       isShown: true
+      // phone: ""
     };
+    this.handleClick = this.handleClick.bind(this)
   }
+
+  handleClick = (id) => {
+    this.setState(prevState => {
+      return {
+        isShown: !prevState.isShown,
+        phone: id
+      }
+    })
+    console.log(id)
+
+  }
+
+
   render() {
     return (
       <div>
         <Sidebar />
-        <PhonesCatalog isShown={this.state.isShown} />
-        <PhonesViewer isShown={!this.state.isShown} />
+        <PhonesCatalog isShown={this.state.isShown} onPhoneClicked={this.handleClick} />
+        <PhonesViewer isShown={!this.state.isShown} phone={this.state.phone} />
       </div>
     );
   }
